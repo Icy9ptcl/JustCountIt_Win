@@ -6,7 +6,7 @@ using System.Windows.Forms;
 // Why there's no counter app!?!?
 // That's why I made this. quality? nevermind.
 namespace JustCountIt {
-	public partial class Main : Form {
+	public partial class MainForm : Form {
 
 		//Counter value but call CountUpdate() or else nothing will change in GUI
 		int Count = 0;
@@ -14,7 +14,7 @@ namespace JustCountIt {
 		// When this is true and when the destroyerTimer ticks, the counter value set to 0
 		bool IsDestroyerOn = false;
 
-		public Main() {
+		public MainForm() {
 			InitializeComponent();
 		}
 
@@ -69,5 +69,10 @@ namespace JustCountIt {
 				DestroyTimer.Stop();
 			}
 		}
+
+		// 地味に必要かもしれない。最前面描画
+		 private void BringFrontCB_CheckedChanged(object sender, EventArgs e) {
+				this.TopMost = BringFrontCB.Checked;
+		 }
 	}
 }
