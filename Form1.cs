@@ -25,6 +25,7 @@ namespace JustCountIt {
 		private void CountUpdate(int ChangeAmount) {
 			Count += ChangeAmount;
 			CountLabel.Text = Count.ToString();
+			CountLabel.AccessibleDescription = "値は " + Count.ToString() + "です";
 		}
 
 		private void Inc1Btn_Click(object sender, EventArgs e) {
@@ -72,7 +73,15 @@ namespace JustCountIt {
 
 		// 地味に必要かもしれない。最前面描画
 		 private void BringFrontCB_CheckedChanged(object sender, EventArgs e) {
-				this.TopMost = BringFrontCB.Checked;
+			this.TopMost = BringFrontCB.Checked;
 		 }
+
+		private void NameText_TextChanged(object sender, EventArgs e) {
+			if (NameText.Text != "") {
+				this.Text = NameText.Text + " - Just Count It";
+			} else {
+				this.Text = "Just Count It";
+			}
+		}
 	}
 }
