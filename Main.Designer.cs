@@ -24,26 +24,27 @@
 		/// </summary>
 		private void InitializeComponent() {
 			this.components = new System.ComponentModel.Container();
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
 			this.MainTLP = new System.Windows.Forms.TableLayoutPanel();
-			this.CountLabel = new System.Windows.Forms.Label();
 			this.ButtonsTLP = new System.Windows.Forms.TableLayoutPanel();
-			this.Destroyer = new System.Windows.Forms.Button();
-			this.header = new System.Windows.Forms.Panel();
-			this.Inc10Btn = new System.Windows.Forms.Button();
-			this.Inc1Btn = new System.Windows.Forms.Button();
+			this.DecFLP = new System.Windows.Forms.FlowLayoutPanel();
 			this.Dec1Btn = new System.Windows.Forms.Button();
 			this.Dec10Btn = new System.Windows.Forms.Button();
-			this.DecFLP = new System.Windows.Forms.FlowLayoutPanel();
 			this.IncFLP = new System.Windows.Forms.FlowLayoutPanel();
-			this.DestroyTimer = new System.Windows.Forms.Timer(this.components);
+			this.Inc1Btn = new System.Windows.Forms.Button();
+			this.Inc10Btn = new System.Windows.Forms.Button();
+			this.Destroyer = new System.Windows.Forms.Button();
+			this.CountLabel = new System.Windows.Forms.Label();
+			this.header = new System.Windows.Forms.Panel();
 			this.HeaderPanel = new System.Windows.Forms.Panel();
-			this.NameText = new System.Windows.Forms.TextBox();
 			this.BringFrontCB = new System.Windows.Forms.CheckBox();
+			this.NameText = new System.Windows.Forms.TextBox();
+			this.DestroyTimer = new System.Windows.Forms.Timer(this.components);
 			this.MainTLP.SuspendLayout();
 			this.ButtonsTLP.SuspendLayout();
-			this.header.SuspendLayout();
 			this.DecFLP.SuspendLayout();
 			this.IncFLP.SuspendLayout();
+			this.header.SuspendLayout();
 			this.HeaderPanel.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -66,21 +67,6 @@
 			this.MainTLP.Size = new System.Drawing.Size(434, 411);
 			this.MainTLP.TabIndex = 0;
 			// 
-			// CountLabel
-			// 
-			this.CountLabel.AccessibleDescription = "カウンターの値は 0 です";
-			this.CountLabel.AccessibleName = "値";
-			this.CountLabel.AutoSize = true;
-			this.CountLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.CountLabel.Font = new System.Drawing.Font("メイリオ", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-			this.CountLabel.Location = new System.Drawing.Point(5, 64);
-			this.CountLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-			this.CountLabel.Name = "CountLabel";
-			this.CountLabel.Size = new System.Drawing.Size(424, 219);
-			this.CountLabel.TabIndex = 1;
-			this.CountLabel.Text = "0";
-			this.CountLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
 			// ButtonsTLP
 			// 
 			this.ButtonsTLP.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
@@ -100,70 +86,18 @@
 			this.ButtonsTLP.Size = new System.Drawing.Size(424, 116);
 			this.ButtonsTLP.TabIndex = 0;
 			// 
-			// Destroyer
+			// DecFLP
 			// 
-			this.Destroyer.AccessibleDescription = "カウンターの値をリセットします";
-			this.Destroyer.AccessibleName = "リセット";
-			this.Destroyer.AutoSize = true;
-			this.Destroyer.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-			this.Destroyer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(99)))), ((int)(((byte)(71)))));
-			this.Destroyer.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.Destroyer.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.Destroyer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.Destroyer.ForeColor = System.Drawing.Color.White;
-			this.Destroyer.Location = new System.Drawing.Point(309, 6);
-			this.Destroyer.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-			this.Destroyer.Name = "Destroyer";
-			this.Destroyer.Size = new System.Drawing.Size(110, 104);
-			this.Destroyer.TabIndex = 2;
-			this.Destroyer.Text = "リセット";
-			this.Destroyer.UseVisualStyleBackColor = false;
-			this.Destroyer.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Destroyer_MouseDown);
-			this.Destroyer.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Destroyer_MouseUp);
-			// 
-			// header
-			// 
-			this.header.Controls.Add(this.HeaderPanel);
-			this.header.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.header.Location = new System.Drawing.Point(0, 0);
-			this.header.Margin = new System.Windows.Forms.Padding(0);
-			this.header.Name = "header";
-			this.header.Size = new System.Drawing.Size(434, 64);
-			this.header.TabIndex = 2;
-			// 
-			// Inc10Btn
-			// 
-			this.Inc10Btn.AccessibleDescription = "カウンターの値を 10 増やします";
-			this.Inc10Btn.AccessibleName = "+10";
-			this.Inc10Btn.BackColor = System.Drawing.Color.MediumSeaGreen;
-			this.Inc10Btn.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.Inc10Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.Inc10Btn.Location = new System.Drawing.Point(5, 64);
-			this.Inc10Btn.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-			this.Inc10Btn.Name = "Inc10Btn";
-			this.Inc10Btn.Size = new System.Drawing.Size(125, 46);
-			this.Inc10Btn.TabIndex = 1;
-			this.Inc10Btn.Text = "+10";
-			this.Inc10Btn.UseVisualStyleBackColor = false;
-			this.Inc10Btn.Click += new System.EventHandler(this.Inc10Btn_Click);
-			// 
-			// Inc1Btn
-			// 
-			this.Inc1Btn.AccessibleDescription = "カウンターの値を 1 増やします";
-			this.Inc1Btn.AccessibleName = "+1";
-			this.Inc1Btn.AutoSize = true;
-			this.Inc1Btn.BackColor = System.Drawing.Color.YellowGreen;
-			this.Inc1Btn.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.Inc1Btn.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-			this.Inc1Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.Inc1Btn.Location = new System.Drawing.Point(5, 6);
-			this.Inc1Btn.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-			this.Inc1Btn.Name = "Inc1Btn";
-			this.Inc1Btn.Size = new System.Drawing.Size(125, 46);
-			this.Inc1Btn.TabIndex = 0;
-			this.Inc1Btn.Text = "+1";
-			this.Inc1Btn.UseVisualStyleBackColor = false;
-			this.Inc1Btn.Click += new System.EventHandler(this.Inc1Btn_Click);
+			this.DecFLP.Anchor = System.Windows.Forms.AnchorStyles.None;
+			this.DecFLP.AutoSize = true;
+			this.DecFLP.Controls.Add(this.Dec1Btn);
+			this.DecFLP.Controls.Add(this.Dec10Btn);
+			this.DecFLP.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
+			this.DecFLP.Location = new System.Drawing.Point(8, 0);
+			this.DecFLP.Margin = new System.Windows.Forms.Padding(0);
+			this.DecFLP.Name = "DecFLP";
+			this.DecFLP.Size = new System.Drawing.Size(135, 116);
+			this.DecFLP.TabIndex = 1;
 			// 
 			// Dec1Btn
 			// 
@@ -198,19 +132,6 @@
 			this.Dec10Btn.UseVisualStyleBackColor = false;
 			this.Dec10Btn.Click += new System.EventHandler(this.Dec10Btn_Click);
 			// 
-			// DecFLP
-			// 
-			this.DecFLP.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.DecFLP.AutoSize = true;
-			this.DecFLP.Controls.Add(this.Dec1Btn);
-			this.DecFLP.Controls.Add(this.Dec10Btn);
-			this.DecFLP.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-			this.DecFLP.Location = new System.Drawing.Point(8, 0);
-			this.DecFLP.Margin = new System.Windows.Forms.Padding(0);
-			this.DecFLP.Name = "DecFLP";
-			this.DecFLP.Size = new System.Drawing.Size(135, 116);
-			this.DecFLP.TabIndex = 1;
-			// 
 			// IncFLP
 			// 
 			this.IncFLP.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -223,10 +144,85 @@
 			this.IncFLP.Size = new System.Drawing.Size(135, 116);
 			this.IncFLP.TabIndex = 0;
 			// 
-			// DestroyTimer
+			// Inc1Btn
 			// 
-			this.DestroyTimer.Interval = 1000;
-			this.DestroyTimer.Tick += new System.EventHandler(this.DestroyTimer_Tick);
+			this.Inc1Btn.AccessibleDescription = "カウンターの値を 1 増やします";
+			this.Inc1Btn.AccessibleName = "+1";
+			this.Inc1Btn.AutoSize = true;
+			this.Inc1Btn.BackColor = System.Drawing.Color.YellowGreen;
+			this.Inc1Btn.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.Inc1Btn.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+			this.Inc1Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.Inc1Btn.Location = new System.Drawing.Point(5, 6);
+			this.Inc1Btn.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+			this.Inc1Btn.Name = "Inc1Btn";
+			this.Inc1Btn.Size = new System.Drawing.Size(125, 46);
+			this.Inc1Btn.TabIndex = 0;
+			this.Inc1Btn.Text = "+1";
+			this.Inc1Btn.UseVisualStyleBackColor = false;
+			this.Inc1Btn.Click += new System.EventHandler(this.Inc1Btn_Click);
+			// 
+			// Inc10Btn
+			// 
+			this.Inc10Btn.AccessibleDescription = "カウンターの値を 10 増やします";
+			this.Inc10Btn.AccessibleName = "+10";
+			this.Inc10Btn.BackColor = System.Drawing.Color.MediumSeaGreen;
+			this.Inc10Btn.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.Inc10Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.Inc10Btn.Location = new System.Drawing.Point(5, 64);
+			this.Inc10Btn.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+			this.Inc10Btn.Name = "Inc10Btn";
+			this.Inc10Btn.Size = new System.Drawing.Size(125, 46);
+			this.Inc10Btn.TabIndex = 1;
+			this.Inc10Btn.Text = "+10";
+			this.Inc10Btn.UseVisualStyleBackColor = false;
+			this.Inc10Btn.Click += new System.EventHandler(this.Inc10Btn_Click);
+			// 
+			// Destroyer
+			// 
+			this.Destroyer.AccessibleDescription = "カウンターの値をリセットします";
+			this.Destroyer.AccessibleName = "リセット";
+			this.Destroyer.AutoSize = true;
+			this.Destroyer.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+			this.Destroyer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(99)))), ((int)(((byte)(71)))));
+			this.Destroyer.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.Destroyer.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.Destroyer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.Destroyer.ForeColor = System.Drawing.Color.White;
+			this.Destroyer.Location = new System.Drawing.Point(309, 6);
+			this.Destroyer.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+			this.Destroyer.Name = "Destroyer";
+			this.Destroyer.Size = new System.Drawing.Size(110, 104);
+			this.Destroyer.TabIndex = 2;
+			this.Destroyer.Text = "リセット";
+			this.Destroyer.UseVisualStyleBackColor = false;
+			this.Destroyer.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Destroyer_MouseDown);
+			this.Destroyer.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Destroyer_MouseUp);
+			// 
+			// CountLabel
+			// 
+			this.CountLabel.AccessibleDescription = "カウンターの値は 0 です";
+			this.CountLabel.AccessibleName = "値";
+			this.CountLabel.AutoSize = true;
+			this.CountLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.CountLabel.Font = new System.Drawing.Font("メイリオ", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+			this.CountLabel.Location = new System.Drawing.Point(5, 64);
+			this.CountLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+			this.CountLabel.Name = "CountLabel";
+			this.CountLabel.Size = new System.Drawing.Size(424, 219);
+			this.CountLabel.TabIndex = 1;
+			this.CountLabel.Text = "0";
+			this.CountLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// header
+			// 
+			this.header.Controls.Add(this.HeaderPanel);
+			this.header.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.header.Location = new System.Drawing.Point(0, 0);
+			this.header.Margin = new System.Windows.Forms.Padding(0);
+			this.header.Name = "header";
+			this.header.Size = new System.Drawing.Size(434, 64);
+			this.header.TabIndex = 2;
 			// 
 			// HeaderPanel
 			// 
@@ -238,18 +234,6 @@
 			this.HeaderPanel.Name = "HeaderPanel";
 			this.HeaderPanel.Size = new System.Drawing.Size(364, 42);
 			this.HeaderPanel.TabIndex = 0;
-			// 
-			// NameText
-			// 
-			this.NameText.AccessibleDescription = "カウンターに付ける名前です";
-			this.NameText.AccessibleName = "名前";
-			this.NameText.Location = new System.Drawing.Point(5, 5);
-			this.NameText.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-			this.NameText.Name = "NameText";
-			this.NameText.Size = new System.Drawing.Size(271, 31);
-			this.NameText.TabIndex = 0;
-			this.NameText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-			this.NameText.TextChanged += new System.EventHandler(this.NameText_TextChanged);
 			// 
 			// BringFrontCB
 			// 
@@ -264,6 +248,23 @@
 			this.BringFrontCB.UseVisualStyleBackColor = true;
 			this.BringFrontCB.CheckedChanged += new System.EventHandler(this.BringFrontCB_CheckedChanged);
 			// 
+			// NameText
+			// 
+			this.NameText.AccessibleDescription = "カウンターに付ける名前です";
+			this.NameText.AccessibleName = "名前";
+			this.NameText.Location = new System.Drawing.Point(5, 5);
+			this.NameText.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+			this.NameText.Name = "NameText";
+			this.NameText.Size = new System.Drawing.Size(271, 31);
+			this.NameText.TabIndex = 0;
+			this.NameText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			this.NameText.TextChanged += new System.EventHandler(this.NameText_TextChanged);
+			// 
+			// DestroyTimer
+			// 
+			this.DestroyTimer.Interval = 1000;
+			this.DestroyTimer.Tick += new System.EventHandler(this.DestroyTimer_Tick);
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 24F);
@@ -271,6 +272,7 @@
 			this.ClientSize = new System.Drawing.Size(434, 411);
 			this.Controls.Add(this.MainTLP);
 			this.Font = new System.Drawing.Font("メイリオ", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
 			this.Name = "MainForm";
 			this.Text = "Just Count it";
@@ -278,10 +280,10 @@
 			this.MainTLP.PerformLayout();
 			this.ButtonsTLP.ResumeLayout(false);
 			this.ButtonsTLP.PerformLayout();
-			this.header.ResumeLayout(false);
 			this.DecFLP.ResumeLayout(false);
 			this.IncFLP.ResumeLayout(false);
 			this.IncFLP.PerformLayout();
+			this.header.ResumeLayout(false);
 			this.HeaderPanel.ResumeLayout(false);
 			this.HeaderPanel.PerformLayout();
 			this.ResumeLayout(false);
